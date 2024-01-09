@@ -75,7 +75,9 @@ function New-IntuneWin32AppPackage {
                         if (-not($PSBoundParameters["IntuneWinAppUtilPath"])) {
                             # Download IntuneWinAppUtil.exe if not present in context temporary folder
                             Write-Verbose -Message "Unable to detect IntuneWinAppUtil.exe in specified location, attempting to download to: $($env:TEMP)"
-                            Start-DownloadFile -URL "https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/raw/master/IntuneWinAppUtil.exe" -Path $env:TEMP -Name "IntuneWinAppUtil.exe"
+                            $uri185 = "https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/raw/master/IntuneWinAppUtil.exe" # 1.8.5
+                            $uri184 = "https://github.com/microsoft/Microsoft-Win32-Content-Prep-Tool/blob/1a00a2a786de646c5fc46d6e1b79988c636e764e/IntuneWinAppUtil.exe" # 1.8.4
+                            Start-DownloadFile -URL $uri184 -Path $env:TEMP -Name "IntuneWinAppUtil.exe"
 
                             # Override path for IntuneWinApputil.exe if custom path was passed as a parameter, but was not found and downloaded to temporary location
                             $IntuneWinAppUtilPath = Join-Path -Path $env:TEMP -ChildPath "IntuneWinAppUtil.exe"
