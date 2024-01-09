@@ -16,10 +16,10 @@ function Invoke-Executable {
         # Create the Process Info object which contains details about the process
         $ProcessStartInfoObject = New-object System.Diagnostics.ProcessStartInfo 
         $ProcessStartInfoObject.FileName = $FilePath
-        $ProcessStartInfoObject.CreateNoWindow = $true 
-        $ProcessStartInfoObject.UseShellExecute = $false 
+        $ProcessStartInfoObject.CreateNoWindow = $false 
+        $ProcessStartInfoObject.UseShellExecute = $true 
         $ProcessStartInfoObject.RedirectStandardOutput = $RedirectStandardOutput
-        $ProcessStartInfoObject.RedirectStandardError = $true 
+        $ProcessStartInfoObject.RedirectStandardError = $false 
         
         # Add the arguments to the process info object
         if ($Arguments.Count -gt 0) {
