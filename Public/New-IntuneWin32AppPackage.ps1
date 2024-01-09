@@ -102,12 +102,7 @@ function New-IntuneWin32AppPackage {
                         if ($ProcessPackage -eq $true) {
                             # Invoke IntuneWinAppUtil.exe with parameter inputs
                             Write-Verbose -Message "Invoking IntuneWinAppUtil.exe to initialize packaging process"
-
-                            [string]$toolargs = "-c ""$($SourceFolder)"" -s ""$($SetupFile)"" -o ""$($OutPutFolder)"" -q"
-                            (Start-Process -FilePath $IntuneWinAppUtilPath -ArgumentList $toolargs -PassThru:$true -ErrorAction Stop -NoNewWindow).WaitForExit()
-                            #$PackageInvocation = (Start-Process -FilePath "`"$IntuneWinAppUtilPath`"" -ArgumentList "-c `"$SourceFolder`"", "-s `"$SetupFile`"", "-o `"$OutPutFolder`"", "-q" -PassThru:$true -ErrorAction Stop -NoNewWindow).WaitForExit()
-                            #-Wait  -NoNewWindow -RedirectStandardOutput $false
-                            #$PackageInvocation = Invoke-Executable -FilePath $IntuneWinAppUtilPath -Arguments "-c ""$($SourceFolder)"" -s ""$($SetupFile)"" -o ""$($OutPutFolder)"" -q" -RedirectStandardOutput $false
+                            $PackageInvocation = Invoke-Executable -FilePath $IntuneWinAppUtilPath -Arguments "-c ""$($SourceFolder)"" -s ""$($SetupFile)"" -o ""$($OutputFolder)"" -q" -RedirectStandardOutput $false
                             if ($PackageInvocation.ExitCode -eq 0) {
                                 Write-Verbose -Message "IntuneWinAppUtil.exe packaging process completed with exit code $($PackageInvocation.ExitCode)"
 
