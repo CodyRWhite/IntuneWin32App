@@ -2,9 +2,10 @@
 ![PowerShell Gallery](https://img.shields.io/powershellgallery/dt/IntuneWin32App)
 
 This module was created to provide means to automate the packaging, creation and publishing of Win32 applications in Microsoft Intune.
+Making some changes as a test.
 
 Currently the following functions are supported in the module:
-- Add-IntuneWin32App
+- Add-IntuneWin32App - test
 - Add-IntuneWin32AppAssignment
 - Add-IntuneWin32AppAssignmentAllDevices
 - Add-IntuneWin32AppAssignmentAllUsers
