@@ -5,8 +5,8 @@
 .NOTES
     Author:      Nickolaj Andersen
     Contact:     @NickolajA
-    Website:     https://www.msendpointmgr.com - test
-#>
+    Website:     https://www.msendpointmgr.com
+    #>
 [CmdletBinding()]
 Param()
 Process {
