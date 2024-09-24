@@ -1,6 +1,7 @@
 # Install IntuneWin32App module from PowerShellGallery
 # - Required modules:
 # -- MSAL.PS (installed automatically)
+# -- test
 Install-Module -Name "IntuneWin32App" -AcceptLicense
 Get-InstalledModule -Name "IntuneWin32App"
 
