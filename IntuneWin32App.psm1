@@ -10,6 +10,7 @@
 [CmdletBinding()]
 Param()
 Process {
+# Comment for test
     # Locate all the public and private function specific files
     $PublicFunctions = Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath "Public") -Filter "*.ps1" -ErrorAction SilentlyContinue
     $PrivateFunctions = Get-ChildItem -Path (Join-Path -Path $PSScriptRoot -ChildPath "Private") -Filter "*.ps1" -ErrorAction SilentlyContinue
